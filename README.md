@@ -6,7 +6,7 @@
     <img src="assets/splash.png">
 </p>
 
-# vue-web-cam
+# @nickkaramoff/vue-web-cam
 
 [![npm](https://img.shields.io/npm/v/vue-web-cam.svg)](https://www.npmjs.com/package/vue-web-cam)
 [![npm](https://img.shields.io/npm/dm/vue-web-cam.svg)](https://www.npmjs.com/package/vue-web-cam)
@@ -15,6 +15,14 @@
 
 Webcam component for VueJs. See [this](http://caniuse.com/#feat=stream)
 for browser compatibility.
+
+> ## Heads up!
+>
+> This package is a fork of
+> [vue-web-cam](https://github.com/vinceg/vue-web-cam).
+> This one should fix the bug of asking the permission twice. Or not.
+>
+> This fork probably can be used as a drop-in replacement.
 
 ## Installation
 
