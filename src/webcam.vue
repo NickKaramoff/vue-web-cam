@@ -115,7 +115,7 @@ export default {
         navigator.mediaDevices.getUserMedia = this.legacyGetUserMediaSupport();
       }
 
-      this.testMediaAccess();
+      this.loadCameras();
     },
 
     /**
@@ -216,31 +216,6 @@ export default {
       if (this.$refs.video !== null && this.$refs.video.srcObject) {
         this.$refs.video.play();
       }
-    },
-
-    /**
-     * test access
-     */
-    testMediaAccess() {
-      let constraints = { video: true };
-
-      if (this.resolution) {
-        constraints.video = {};
-        constraints.video.height = this.resolution.height;
-        constraints.video.width = this.resolution.width;
-      }
-
-      navigator.mediaDevices
-        .getUserMedia(constraints)
-        .then(stream => {
-          //Make sure to stop this MediaStream
-          let tracks = stream.getTracks();
-          tracks.forEach(track => {
-            track.stop();
-          });
-          this.loadCameras();
-        })
-        .catch(error => this.$emit("error", error));
     },
 
     /**
